@@ -1,12 +1,12 @@
 @echo off
 echo Building Docker image...
-docker build -t 2048-game .
+docker build -t 2048-game:1 .
 
 echo Running first container on port 8080...
-docker run -d -p 8080:8080 --name game1 2048-game
+docker run -d -p 8080:8080 --name game1 2048-game:1
 
 echo Running second container on port 8081...
-docker run -d -p 8081:8080 --name game2 2048-game
+docker run -d -p 8081:8080 --name game2 2048-game:1
 
 echo Showing running containers...
 docker ps
